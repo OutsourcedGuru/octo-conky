@@ -28,7 +28,7 @@ ${offset 5}${voffset 10}${font font Nimbus Mono L,size:4,style:bold}${execpi 10 
 
 |Description|Version|Author|Last Update|
 |:---|:---|:---|:---|
-|octopi-conky|v1.0.0|OutsourcedGuru|June 30, 2018|
+|octo-conky|v1.0.0|OutsourcedGuru|June 30, 2018|
 
 |Donate||Cryptocurrency|
 |:-----:|---|:--------:|

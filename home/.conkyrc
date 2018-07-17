@@ -1,0 +1,91 @@
+conky.config = {
+    alignment =              'top_right',
+    background =             false,
+    border_inner_margin =    1,
+    border_width =           1,
+    color1 =                 'D6D6D6',
+    color2 =                 'EFEFEF',
+    color3 =                 'A3ADB0',
+    color4 =                 'D7D7D7',
+    color5 =                 'AAD7AA',
+    color6 =                 '3273B5',
+    cpu_avg_samples =        1,
+    default_color =          'FFFFFF',
+    default_outline_color =  '000000',
+    default_shade_color =    '333333',
+    draw_borders =           false,
+    draw_graph_borders =     true,
+    draw_outline =           false,
+    draw_shades =            false,
+    double_buffer =          true,
+    extra_newline =          false,
+    font =                   'saxMono:size=9',
+    gap_x =                  3,
+    gap_y =                  0,
+    minimum_height =         320,
+    maximum_height =         320,
+    minimum_width =          480,
+    maximum_width =          480,
+    net_avg_samples =        2,
+    no_buffers =             true,
+    override_utf8_locale =   true,
+    out_to_console =         false,
+    out_to_stderr =          false,
+    own_window =             true,
+    own_window_class =       'Conky',
+    own_window_transparent = false,
+    own_window_type =        'desktop',
+    pad_percents =           2,
+    short_units =            true,
+    show_graph_scale =       false,
+    show_graph_range =       false,
+    stippled_borders =       3,
+    text_buffer_size =       1024,
+    total_run_times =        0,
+    update_interval =        1.0,
+    uppercase =              false,
+    use_xft =                true,
+    use_spacer =             'none',
+    xftalpha =               0.1,
+    lua_load =               '~/.conky/lua/clock.lua',
+    lua_draw_hook_pre =      'clock_rings'
+}
+
+conky.text = [[
+${color4}${offset 256}${voffset -5}${cpugraph cpu6 17,1}${voffset -3}${hr 2}${color3}
+${voffset -19}${alignr}${font neuropol:size=20}${time %H:%M}${font}  ${voffset -7}${font saxMono:size=9}$uptime
+${voffset 2}${alignr}${cpubar cpu6 0, 180}${voffset 2}${color1}
+${voffset -5}${alignr}${font neuropol:size=12}$memperc% ${font Nimbus Mono L,size:7,style:bold}Ram
+${alignr}${font neuropol:size=12}${fs_used_perc}% ${font Nimbus Mono L,size:7,style:bold}/ ${font neuropol,size:12}${fs_used /}-${fs_size /}
+#
+${voffset 15}${font Nimbus Mono L,size:4,style:bold}${color2}${alignr} ${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
+${alignr}${offset 20}${font Nimbus Mono L,size:3,style:bold}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==1'}
+${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==2'}
+${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==3'}
+${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==4'}
+${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==5'}
+${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==6'}
+#
+${color4}${offset 335}${voffset 3}${cpugraph cpu6 17,1}${voffset -12}${hr 2}${color3}
+${alignr}${font neuropol:size=12}${cpu cpu1}% ${font Nimbus Mono L,size:6,style:bold}Core1
+${alignr}${font neuropol:size=12}${cpu cpu2}% ${font Nimbus Mono L,size:6,style:bold}Core2
+${alignr}${font neuropol:size=12}${cpu cpu3}% ${font Nimbus Mono L,size:6,style:bold}Core3
+${alignr}${font neuropol:size=12}${cpu cpu4}% ${font Nimbus Mono L,size:6,style:bold}Core4
+#
+${color4}${offset 5}${voffset -194}${cpugraph cpu6 1,173}${voffset 8}${cpugraph cpu6 17,1}${color3}
+${offset 5}${voffset -14}${font Nimbus Mono L,size:6,style:bold}${if_up wlan0}WiFi ${font neuropol,size:12} ${wireless_link_qual_perc wlan0}% $else ${color3}WiFi offline $endif
+${offset 5}${if_up wlan0}${font Nimbus Mono L,size:6,style:bold}${voffset -2}Dw   ${font neuropol,size:12} ${downspeed wlan0}$else ${font Nimbus Mono L,size:7,style:bold}Dw ${font neuropol,size:12} ${downspeed wlan0}$endif
+${offset 5}${if_up wlan0}${font Nimbus Mono L,size:6,style:bold}${voffset -2}Up   ${font neuropol,size:12} ${upspeed wlan0}$else ${font Nimbus Mono L,size:7,style:bold}Up ${font neuropol:size=12} ${upspeed wlan0}$endif
+${offset 5}${voffset -1}${cpubar cpu6 0, 90}${voffset 2}${color1}
+${offset 5}${font Nimbus Mono L,size:6,style:bold}totalDw ${font neuropol,size:12}${totaldown wlan0}
+#
+${color4}${offset 5}${voffset 15}${cpugraph cpu6 1,280}${voffset 8}${cpugraph cpu6 17,1}${color3}
+${offset 5}${voffset -10}${font Nimbus Mono L,size:7,style:bold}File ${font neuropol:size=12}${execpi 30 node ~/sites/octo-conky file}
+${offset 5}${font Nimbus Mono L,size:7,style:bold}Estimate ${font neuropol,size:12}${execpi 30 node ~/sites/octo-conky estimated}
+${offset 5}${font Nimbus Mono L,size:7,style:bold}Completed ${font neuropol,size:12}${execpi 30 node ~/sites/octo-conky percentage}
+#
+${offset 5}${voffset -310}${color4}${font neuropol:size=18}charming-pascal
+${offset 5}${color5}${voffset -6}${font Nimbus Mono L,size:4,style:bold}Black Pearl ${font neuropol:size=8}v1.0.1
+${offset 5}${voffset 5}${font font Nimbus Mono L,size:4,style:bold}OctoPrint ${font neuropol:size=8}${execpi 30 node ~/sites/octo-conky version}
+${offset 7}${voffset 10}${color3}${font font Nimbus Mono L,size:4,style:bold}${execpi 10 node ~/sites/octo-conky temp}
+]]

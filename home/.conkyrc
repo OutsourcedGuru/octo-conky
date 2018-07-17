@@ -60,11 +60,11 @@ ${alignr}${font neuropol:size=12}${fs_used_perc}% ${font Nimbus Mono L,size:7,st
 #
 ${voffset 15}${font Nimbus Mono L,size:4,style:bold}${color2}${alignr} ${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
 ${alignr}${offset 20}${font Nimbus Mono L,size:3,style:bold}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==1'}
-${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==2'}
-${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==3'}
-${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==4'}
-${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==5'}
-${alignr}${offset 20}${color3}${execpi 60 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==6'}
+${alignr}${offset 20}${color3}${execpi 3600 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==2'}
+${alignr}${offset 20}${color3}${execpi 3600 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==3'}
+${alignr}${offset 20}${color3}${execpi 3600 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==4'}
+${alignr}${offset 20}${color3}${execpi 3600 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==5'}
+${alignr}${offset 20}${color3}${execpi 3600 JOUR=`date +%e`; cal | sed '1d' | sed 's/^/ /g' | sed /" $JOUR "/s/" $JOUR "/" "'${color6}'"$JOUR"'${color3}'" "/ | awk 'NR==6'}
 #
 ${color4}${offset 335}${voffset 3}${cpugraph cpu6 17,1}${voffset -12}${hr 2}${color3}
 ${alignr}${font neuropol:size=12}${cpu cpu1}% ${font Nimbus Mono L,size:6,style:bold}Core1
@@ -80,12 +80,12 @@ ${offset 5}${voffset -1}${cpubar cpu6 0, 90}${voffset 2}${color1}
 ${offset 5}${font Nimbus Mono L,size:6,style:bold}totalDw ${font neuropol,size:12}${totaldown wlan0}
 #
 ${color4}${offset 5}${voffset 15}${cpugraph cpu6 1,280}${voffset 8}${cpugraph cpu6 17,1}${color3}
-${offset 5}${voffset -10}${font Nimbus Mono L,size:7,style:bold}File ${font neuropol:size=12}${execpi 30 node ~/sites/octo-conky file}
-${offset 5}${font Nimbus Mono L,size:7,style:bold}Estimate ${font neuropol,size:12}${execpi 30 node ~/sites/octo-conky estimated}
-${offset 5}${font Nimbus Mono L,size:7,style:bold}Completed ${font neuropol,size:12}${execpi 30 node ~/sites/octo-conky percentage}
+${offset 5}${voffset -10}${font Nimbus Mono L,size:7,style:bold}File ${font neuropol:size=12}${execpi 119 node ~/sites/octo-conky file}
+${offset 5}${font Nimbus Mono L,size:7,style:bold}Estimate ${font neuropol,size:12}${execpi 29 node ~/sites/octo-conky estimated}
+${offset 5}${font Nimbus Mono L,size:7,style:bold}Completed ${font neuropol,size:12}${execpi 23 node ~/sites/octo-conky percentage}
 #
 ${offset 5}${voffset -310}${color4}${font neuropol:size=18}charming-pascal
 ${offset 5}${color5}${voffset -6}${font Nimbus Mono L,size:4,style:bold}Black Pearl ${font neuropol:size=8}v1.0.1
-${offset 5}${voffset 5}${font font Nimbus Mono L,size:4,style:bold}OctoPrint ${font neuropol:size=8}${execpi 30 node ~/sites/octo-conky version}
-${offset 7}${voffset 10}${color3}${font font Nimbus Mono L,size:4,style:bold}${execpi 10 node ~/sites/octo-conky temp}
+${offset 5}${voffset 5}${font font Nimbus Mono L,size:4,style:bold}OctoPrint ${font neuropol:size=8}${execpi 37 node ~/sites/octo-conky version}
+${offset 7}${voffset 10}${color3}${font font Nimbus Mono L,size:4,style:bold}${execpi 11 node ~/sites/octo-conky temp}
 ]]

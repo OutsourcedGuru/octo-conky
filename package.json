@@ -1,6 +1,6 @@
 {
   "name": "octo-conky",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Conky script for querying an OctoPrint API for print-related details",
   "main": "index.js",
   "scripts": {
